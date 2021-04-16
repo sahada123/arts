@@ -1,0 +1,36 @@
+{% extends 'index.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="514" height="69" border="1">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Place</th>
+      <th scope="col">Post</th>
+      <th scope="col">Pin</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    <tr> {% for i in val %}
+      <td>&nbsp;{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+      <td>&nbsp;{{i[4]}}</td>
+      <td>{{i[5]}}</td>
+      <td>{{i[6]}}</td>
+      <td>&nbsp;{{i[7]}}</td>
+      <td><p><a href="/accept_college?lid={{i[1]}}">Accept</a></p>
+      <p><a href="/reject_college?lid={{i[1]}}">Reject</a></p></td>
+    </tr>{% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
