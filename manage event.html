@@ -1,0 +1,44 @@
+{% extends 'collegeindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<body>
+<tbody height="50" width="50">
+<form id="form1" name="form1" method="post" action="/add_event">
+  <div align="center">
+    <table width="600" height="100" border="1">
+      <tr>
+        <th width="215" scope="col">Event</th>
+        <th width="273" scope="col">Date</th>
+        <th width="337" scope="col">Time</th>
+        <th width="220" scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i[1]}}</td>
+        <td>&nbsp;{{i[3]}}</td>
+        <td>{{i[4]}}</td>
+        <td><p><a href="/view_cat?id={{i[0]}}&date={{i[3]}}">Send request</a></p>
+        <p><a href="/manage_event_edit?eventid={{i[0]}}">Edit</a></p>
+        <p><a href="/manage_event_delete?id={{i[0]}}">Delete</a></p></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="4"><div align="center">
+          <label>
+            <input type="submit" name="Submit" value="Add" />
+            </label>
+        </div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

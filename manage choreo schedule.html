@@ -1,0 +1,34 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<body>
+<blockquote>
+  <form id="form1" name="form1" method="post" action="">
+    <table width="600" border="">
+      <tr>
+        <th scope="row">From time </th>
+        <td>To time</td>
+        <td>Date</td>
+        <td>&nbsp;status</td>
+         <td>&nbsp;</td>
+      </tr>{% for i in val %}
+      <tr>
+        <th scope="row">{{i[2]}}</th>
+        <td>{{i[3]}}</td>
+        <td>&nbsp;{{i[4]}}</td>
+        <td>&nbsp;{{i[5]}}</td>
+        <td><p><a href="/update_choreo_sched1?lid={{i[0]}}">Edit</a></p>
+        <p><a href="/mng_schedule_delete?lid={{i[0]}}">Delete</a></p></td>
+      </tr>{% endfor %}
+    </table>
+  </form>
+</blockquote>
+</body>
+<!--</html>-->
+{% endblock %}
