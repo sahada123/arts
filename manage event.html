@@ -5,27 +5,29 @@
 <!--<head>-->
 <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
 <!--<title>Untitled Document</title>-->
+
 <!--</head>-->
 
 <body>
-<tbody height="50" width="50">
+<tbody height="150" width="150">
 <form id="form1" name="form1" method="post" action="/add_event">
   <div align="center">
-    <table width="600" height="100" border="1">
+    <table class="table">
       <tr>
-        <th width="215" scope="col">Event</th>
-        <th width="273" scope="col">Date</th>
-        <th width="337" scope="col">Time</th>
-        <th width="220" scope="col">&nbsp;</th>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>&nbsp;</th>
       </tr>
       {% for i in val %}
       <tr>
         <td>{{i[1]}}</td>
         <td>&nbsp;{{i[3]}}</td>
         <td>{{i[4]}}</td>
-        <td><p><a href="/view_cat?id={{i[0]}}&date={{i[3]}}">Send request</a></p>
-        <p><a href="/manage_event_edit?eventid={{i[0]}}">Edit</a></p>
-        <p><a href="/manage_event_delete?id={{i[0]}}">Delete</a></p></td>
+        <td><a href="/view_cat?id={{i[0]}}&date={{i[3]}}">Send request</a></br>
+        <a href="/manage_event_edit?eventid={{i[0]}}">Edit</a></br>
+        <a href="/manage_event_delete?id={{i[0]}}">Delete</a>
+        </td>
       </tr>
       {% endfor %}
       <tr>

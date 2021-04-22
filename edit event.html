@@ -3,14 +3,47 @@
 
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <!--<html xmlns="http://www.w3.org/1999/xhtml">-->
-<!--<head>-->
+<head>
 <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
 <!--<title>Untitled Document</title>-->
+  <style>
+     #login-box {
+            position: relative;
+            margin: 5% auto;
+            width: 300px;
+            height:450px;
+           <!--background: #FFF;-->
+            <!--border-radius: 2px;-->
+            <!--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);-->
+        }
+  </style>
+</head>
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var minDate= year + '-' + month + '-' + day;
+
+    $('#txtDate').attr('min', minDate);
+});
+</script>
 <!--</head>-->
 
 <body>
+<div id="login-box">
 <form id="form1" name="form1" method="post" action="/manage_event_edit2">
-  <table width="200" border="1">
+  <table class="table">
     <tr>
       <th scope="row">Event</th>
       <td><label>
@@ -20,7 +53,7 @@
     <tr>
       <th scope="row">Date</th>
       <td><label>
-        <input type="date" name="Date"  value="{{val[3]}}" required/>
+        <input type="date" name="Date"  value="{{val[3]}}" id="txtDate" required/>
       </label></td>
     </tr>
     <tr>
@@ -38,6 +71,7 @@
     </tr>
   </table>
 </form>
+  </div>
 </body>
 <!--</html>-->
 {% endblock %}
