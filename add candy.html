@@ -6,22 +6,42 @@
 <!--<head>-->
 <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
 <!--<title>Untitled Document</title>-->
-<!--</head>-->
+<head>
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+  <style>
+     #login-box {
+            position: relative;
+            margin: 5% auto;
+            width: 300px;
+            height:450px;
+           <!--background: #FFF;-->
+            <!--border-radius: 2px;-->
+            <!--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);-->
+        }
+
+  </style>
+</head>
 
 <body>
+<div id="login-box">
 <form id="form1" name="form1" method="post" action="/candy1">
-  <table width="200" border="1">
+  <center> <h1>
+     Add Candidate
+    </h1></center>
+  <br>
+  <table width="300" border="0">
+       <!--<tr>-->
+      <!--<th colspan="2" scope="row">Add Candidate </th>-->
+    <!--</tr>-->
     <tr>
-      <th colspan="2" scope="row">Add Candidate </th>
-    </tr>
-    <tr>
-      <th scope="row">Fname</th>
+      <th scope="row">First name</th>
       <td><label>
         <input type="text" name="textfield" required pattern="[A-Z a-z]{3,25}"/>
       </label></td>
     </tr>
     <tr>
-      <th scope="row">Lname</th>
+      <th scope="row">Last name</th>
       <td><label>
         <input type="text" name="textfield2" required pattern="[A-Z a-z]{1,25}"/>
       </label></td>
@@ -69,12 +89,15 @@
       </label></td>
     </tr>
     <tr>
-      <th colspan="2" scope="row"><label>
+       </table>
+      <div align="center">
         <input type="submit" name="Submit" value="Add" />
-      </label></th>
-    </tr>
-  </table>
+      </div>
+
 </form>
+</div>
+
+<br><br><br><br><br><br><br><br><br>
 </body>
 <!--</html>-->
 {% endblock %}
