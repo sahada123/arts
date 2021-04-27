@@ -1,0 +1,63 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+   <center> <h1>
+     VIEW COLLEGE EVENT
+    </h1></center>
+  <br><br>
+  <table id="customers">
+    <tr>
+      <th scope="col">College</th>
+      <th scope="col">Event</th>
+       <th scope="col">Date</th>
+      <!--<th></th>-->
+      <th scope="col">&nbsp;</th>
+    </tr>
+    <tr>{% for i in val %}
+      <td>&nbsp;{{i[2]}}</td>
+      <td>&nbsp;{{i[9]}}</td>
+      <td>&nbsp;{{i[11]}}</td>
+
+
+      <td><a href="chore_accept_event_reqst?id={{i[14]}}">Accept</a></br>
+      <a href="chore_reject_event_reqst?id={{i[14]}}">reject</a></td>
+    </tr>{% endfor %}
+  </table>
+</form>
+<br><br><br><br><br><br><br><br><br><br>
+</body>
+<!--</html>-->
+{% endblock %}
