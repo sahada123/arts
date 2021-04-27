@@ -1,0 +1,101 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var minDate= year + '-' + month + '-' + day;
+
+    $('#txtDate').attr('min', minDate);
+});
+</script>
+
+<!--</head>-->
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_schedule1">
+   <center> <h1>
+     SCHEDULE
+    </h1></center>
+  <br>
+  <center>
+  <table width="400" border="0">
+    <tr>
+      <th width="75" scope="row">From time </th>
+      <td width="167"><label>
+        <input type="time" name="time" required />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">To time </th>
+      <td><label>
+        <input type="time" name="time1" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><label>
+        <input type="date" name="Date" id="txtDate" required />
+      </label></td>
+    </tr>
+     <!--<tr>-->
+      <!--<th scope="row">Available status</th>-->
+      <!--<td><label>-->
+        <!--<select name="s">-->
+          <!--<option>available</option>-->
+          <!--<option>unavailable</option>-->
+           <!--</select>-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    </table>
+  </center>>
+  <br>
+    <div align="center">
+
+        <input type="submit" name="Submit" value="Add" />
+
+
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
