@@ -1,4 +1,4 @@
-{% extends 'index.html'%}
+{% extends 'collegeindex.html'%}
 {% block body%}
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <!--<html xmlns="http://www.w3.org/1999/xhtml">-->
@@ -34,30 +34,30 @@
 </head>
 <body>
 <form id="form1" name="form1" method="post" action="">
-  <center>
-      <H4>View Schedule & Send Request</H4>
+    <center>
+      <H4>View Choreographer details</H4>
     </center>
-  <table id="customers">
+    <br>
+<table id="customers">
     <tr>
-      <!--<th width="144" scope="row">Choreographer</th>-->
-      <td width="144">From time </td>
-      <td width="144">To time </td>
-      <td width="177">Date</td>
-      <td width="177">status</td>
-      <td width="177">&nbsp;</td>
+      <th width="144" scope="row"><strong>Choreographer name </strong></th>
+      <th width="144"scope="row"><strong>Contact</strong></th>
+      <!--<td width="144"><strong>Schedule</strong></td>-->
+      <th width="144" scope="row"><strong>Email</strong></th>
+      <th width="69">&nbsp;</th>
     </tr>
-    {% for i in val %}
+   {% for i in val %}
     <tr>
-      <!--<th scope="row">{{i[1]}}</th>-->
-      <td>{{i[2]}}</td>
-      <td>{{i[3]}}</td>
-      <td>{{i[4]}}</td>
-       <td>{{i[5]}}</td>
-       <td><a href="#">send request</a></td>
+      <td scope="row">{{i[3]}} {{i[4]}}</td>
+      <td>{{i[8]}}</td>
+      <!--<td>{{i[3]}}</td>-->
+      <td>{{i[9]}}</td>
+      <td><a href="/send_reqst?id={{i[2]}}">Send request</a></td>
     </tr>
-     {% endfor %}
+    {% endfor %}
   </table>
 </form>
+<br><br><br><br><br><br><br><br><br><br><br>
 </body>
 <!--</html>-->
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'index.html'%}
+{% extends 'adminindex.html'%}
 {% block body%}
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <!--<html xmlns="http://www.w3.org/1999/xhtml">-->
@@ -6,10 +6,40 @@
 <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
 <!--<title>Untitled Document</title>-->
 <!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
 <body>
 <form id="form1" name="form1" method="post" action="">
-  <table width="514" height="69" border="1">
+  <table class="table" id="customers">
+    <tr align="center">
+      <center> <h4>View & Approve College</h4></center>>
+    </tr>
+  </br>
+
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Place</th>
@@ -26,11 +56,13 @@
       <td>{{i[5]}}</td>
       <td>{{i[6]}}</td>
       <td>&nbsp;{{i[7]}}</td>
-      <td><p><a href="/accept_college?lid={{i[1]}}">Accept</a></p>
-      <p><a href="/reject_college?lid={{i[1]}}">Reject</a></p></td>
+      <td><a href="/accept_college?lid={{i[1]}}">Accept</a></br>
+      <a href="/reject_college?lid={{i[1]}}">Reject</a></td>
     </tr>{% endfor %}
   </table>
 </form>
 </body>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br>
 <!--</html>-->
 {% endblock %}
