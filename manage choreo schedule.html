@@ -6,25 +6,62 @@
 <!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
 <!--<title>Untitled Document</title>-->
 <!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
 <body>
 <blockquote>
   <form id="form1" name="form1" method="post" action="">
-    <table width="600" border="">
+    <center> <h1>
+     Manage schedule
+    </h1></center>
+  <br><br>
+    <table id="customers">
+       <tr>
+        <th width="328" scope="col">From time </th>
+        <th width="187" scope="col">To time </th>
+        <th width="162" scope="col">Date</th>
+         <th width="162" scope="col">Status</th>
+         <th></th>
+      </tr>
+      <!--<tr>-->
+        <!--<th scope="row" bold> </th>-->
+        <!--<td scope="row" bold></td>-->
+        <!--<td scope="row" bold>Date</td>-->
+        <!--<td scope="row" bold>&nbsp;</td>-->
+        <!---->
+      <!--</tr>-->
+      {% for i in val %}
       <tr>
-        <th scope="row">From time </th>
-        <td>To time</td>
-        <td>Date</td>
-        <td>&nbsp;status</td>
-         <td>&nbsp;</td>
-      </tr>{% for i in val %}
-      <tr>
-        <th scope="row">{{i[2]}}</th>
+        <td>{{i[2]}}</td>
         <td>{{i[3]}}</td>
         <td>&nbsp;{{i[4]}}</td>
         <td>&nbsp;{{i[5]}}</td>
-        <td><p><a href="/update_choreo_sched1?lid={{i[0]}}">Edit</a></p>
-        <p><a href="/mng_schedule_delete?lid={{i[0]}}">Delete</a></p></td>
+        <td><a href="/update_choreo_sched1?lid={{i[0]}}">Edit</a></br>
+        <a href="/mng_schedule_delete?lid={{i[0]}}">Delete</a></td>
       </tr>{% endfor %}
     </table>
   </form>
