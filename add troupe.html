@@ -18,25 +18,26 @@
     <tr>
       <th scope="row">Troupe</th>
       <td><label>
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield" required pattern="[A-Z a-z]{3,25}" />
       </label></td>
     </tr>
     <tr>
       <th scope="row">Contact</th>
       <td><label>
-        <input type="text" name="textfield2" />
+        <input type="text" name="textfield2" required pattern="[6789][0-9]{9}"/>
       </label></td>
     </tr>
     <tr>
       <th scope="row">Email</th>
       <td><label>
-        <input type="text" name="textfield3" />
+        <input type="text" name="textfield3"   required/>
+        <!--pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"-->
       </label></td>
     </tr>
     <tr>
       <th scope="row">Fee</th>
       <td><label>
-        <input type="text" name="textfield4" />
+        <input type="text" name="textfield4" required pattern="[0-9]{3,25}"/>
       </label></td>
     </tr>
     <!--<tr>-->
