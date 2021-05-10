@@ -1,0 +1,77 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<blockquote>
+  <form id="form1" name="form1" method="post" action="searchchor">
+    <center> <h4>
+     View choreographer & Send request
+    </h4></center>
+    <center>
+      <br>
+    <table id="customers">
+      <tr>
+        <th width="92" scope="col">Event Date </th>
+        <th width="144" scope="col"><label>
+          <input type="date" name="textfield" />
+        </label></th>
+        <th width="56" scope="col"><label>
+          <input type="submit" name="Submit" value="Search" />
+        </label></th>
+        <th width="102" scope="col">&nbsp;</th>
+      </tr>
+      <tr>
+        <td>Choreographer</td>
+        <td>Contact</td>
+        <td>Email</td>
+        <td>&nbsp;</td>
+      </tr>
+      {% for i in val1 %}
+      <tr>
+        <td>{{i[3]}} {{i[4]}}</td>
+        <td>&nbsp;{{i[8]}} </td>
+        <td>{{i[9]}}</td>
+        <td><a href="/phone?id={{i[2]}}">Send request</a></td>
+      </tr>
+       {% endfor %}
+    </table>
+    </center>
+  </form>
+</blockquote>
+ <br> <br> <br> <br> <br> <br> <br> <br>
+</body>
+<!--</html>-->
+{% endblock %}

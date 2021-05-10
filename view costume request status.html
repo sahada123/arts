@@ -1,0 +1,93 @@
+
+{% extends 'choreoindex.html'%}
+{% block body%}
+<head>
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+  <style>
+     #login-box {
+            position: relative;
+            margin: 5% auto;
+            width: 300px;
+            height:450px;
+           <!--background: #FFF;-->
+            <!--border-radius: 2px;-->
+            <!--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);-->
+        }
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+  </style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="view_costume_responce2">
+  <center> <h4>
+     View Costume booking status
+    </h4></center>
+    <center>
+      <br>
+  <table id="customers">
+    <tr>
+      <th colspan="6" scope="col">Name
+        <label>
+          <select name="select">
+            {% for i in val %}
+
+            <option value="{{i[0]}}">{{i[0]}}</option>
+            {% endfor %}
+        </select>
+      Contact
+      <select name="select2">
+        {% for i in val1 %}
+        <option value="{{i[0]}}">{{i[0]}}</option>
+        {% endfor %}
+      </select>
+           <input type="submit" name="Submit" value="Search" />
+
+      </label></th>
+      <th></th>
+    </tr>{% for i in val2 %}
+    <tr>
+      <td>Choreographer</td>
+      <td>Contact</td>
+      <td>Status</td>
+      <td>Description</td>
+       <td>Rate</td>
+      <td>Date</td>
+      <td>Costume</td>
+    </tr>
+    <tr>
+      <td>{{i[15]}} {{i[16]}}</td>
+      <td>&nbsp;{{i[5]}}</td>
+       <td>&nbsp;{{i[3]}}</td>
+      <td>&nbsp;{{i[14]}}</td>
+       <td>&nbsp;{{i[12]}}</td>
+      <td>{{i[7]}}</td>
+      <td><img src="static/costume/{{i[11]}}"></td>
+    </tr>     {% endfor %}
+  </table>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<!--</html>-->
+{% endblock %}
