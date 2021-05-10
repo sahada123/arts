@@ -1,0 +1,64 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+   <center> <h4>
+    Manage Costume
+    </h4></center>
+    <center>
+      <br><br>
+  <table id="customers">
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Size</th>
+      <th scope="col">Rate</th>
+      <th scope="col">Image</th>
+         <th scope="col">description</th>
+      <th scope="col">&nbsp;</th>
+    </tr>{% for i in val %}
+    <tr>
+      <td height="32">{{i[8]}}&nbsp;</td>
+      <td>&nbsp;{{i[5]}}</td>
+      <td>{{i[4]}}&nbsp;</td>
+      <td>&nbsp;<img src="./static/costume/{{i[3]}}" width="100" height="100"></td>
+         <td>&nbsp;{{i[6]}}</td>
+      <td><p><a href="update_costume?id={{i[0]}}">Edit</a></p>
+          <p><a href="delete_costume?id={{i[0]}}">Delete</a></p></td>
+    </tr>{% endfor %}
+  </table>
+</form><br><br><br><br><br><br>
+</body>
+<!--</html>-->
+{% endblock %}
