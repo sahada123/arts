@@ -1,0 +1,73 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<body>
+<form action="update_costume1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+   <center> <h4>
+    Manage Costume
+    </h4></center>
+    <center>
+      <br><br>
+      <center>
+  <table width="200" border="0">
+    <tr>
+      <th scope="row">Category</th>
+      <td><label>
+        <select name="select"  >{% for i in vall %}<option value="{{i[0]}}"> {{i[1]}}</option>{% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Size</th>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val[5]}}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Rate</th>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val[4]}}" required pattern="[0-9]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">image</th>
+      <td><label>
+        <input type="file" name="file" value="{{val[3]}}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">description</th>
+      <td><label>
+        <input type="text" name="textfield7" value="{{val[6]}}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Set</th>
+      <td><label>
+        <input type="text" name="textfield71" value="{{val[7]}}" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Colour</th>
+      <td><label>
+        <input type="text" name="textfield72" value="{{val[8]}}" required/>
+      </label></td>
+    </tr>
+    <!--<tr>-->
+      <!--<th colspan="2" scope="row"><label>-->
+       <!---->
+      <!--</label></th>-->
+    <!--</tr>-->
+  </table>
+       <input type="submit" name="Submit" value="Update" />
+      </center>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

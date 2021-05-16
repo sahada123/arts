@@ -47,25 +47,26 @@
     <center>
       <br>
   <table id="customers">
-    <tr>
-      <th colspan="6" scope="col">Name
-        <label>
-          <select name="select">
-            {% for i in val %}
+    <!--<tr>-->
+      <!--<th colspan="6" scope="col">Name-->
+        <!--<label>-->
+          <!--<select name="select">-->
+            <!--{% for i in val %}-->
 
-            <option value="{{i[0]}}">{{i[0]}}</option>
-            {% endfor %}
-        </select>
-      Contact
-      <select name="select2">
-        {% for i in val1 %}
-        <option value="{{i[0]}}">{{i[0]}}</option>
-        {% endfor %}
-      </select>
-           <input type="submit" name="Submit" value="Search" />
+            <!--<option value="{{i[0]}}">{{i[0]}}</option>-->
+            <!--{% endfor %}-->
+        <!--</select>-->
+      <!--Contact-->
+      <!--<select name="select2">-->
+        <!--{% for i in val1 %}-->
+        <!--<option value="{{i[0]}}">{{i[0]}}</option>-->
+        <!--{% endfor %}-->
+      <!--</select>-->
+           <!--<input type="submit" name="Submit" value="Search" />-->
 
-      </label></th>
-    </tr>{% for i in val2 %}
+      <!--</label></th>-->
+    <!--</tr>-->
+
     <tr>
         <td>Choreographer</td>
 
@@ -78,7 +79,7 @@
 
 
 
-    </tr>
+    </tr>{% for i in val2 %}
     <tr>
         <td>{{i[15]}} {{i[16]}}</td>
         <td>{{i[9]}}</td>
