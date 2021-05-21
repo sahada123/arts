@@ -1,0 +1,33 @@
+{% extends 'choreoindex.html'%}
+{% block body%}
+<body>
+<form id="form1" name="form1" method="post" action="">
+   <center> <h4>
+    Send Complaint
+    </h4></center>
+    <center>
+      <br><br>
+  <table width="200" border="0">
+       <tr>
+      <th scope="row">Choreographer</th>
+      <td><label>
+        <select name="select">
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Complaint</th>
+      <td><label>
+      <textarea name="textarea"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Send" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>html-->
+{% endblock %}
