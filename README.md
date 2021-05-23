@@ -17,4 +17,4 @@ event that are decided to conduct on colleges. College can pay amount for indivi
 the event details of different colleges and they can request individual colleges. Also candidate can view schedules of registered choreographers. This application can be helpful for
 colleges and as well as public uses who initiates different events. Through this application
 user can requests costumes for particular events. The public users can request for a troupe.
-The choreographer willing to provide troupe can view and accept troupe requests.
+The choreographer willing to provide troupe and they can view and accept troupe requests.
