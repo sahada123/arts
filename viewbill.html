@@ -1,0 +1,93 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'collegeindex.html'%}
+{% block body%}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="bsrch">
+  <h4 align="CENTER">Costume/Troupe Bill</h4>
+
+  <p align="center">date:
+    <input type="date" name="date" required>
+    <input type="submit" name="submit" value="search">
+
+
+</select></p>
+
+
+  <table id="customers">
+    <tr>
+      <th width="68" scope="col">DATE</th>
+      <th width="105" scope="col">COSTOME </th>
+      <th width="61" scope="col">NO OF DAYS</th>
+      <th width="127" scope="col">TOTAL</th>
+    </tr>
+    <tr>
+      {% for i in val%}
+      <td height="81">&nbsp;{{i[5]}}</td>
+      <td>&nbsp;<img src="./static/costume/{{i[0]}}" height="100" width="100"> {{i[1]}}</td>
+      <td>&nbsp;{{i[7]}}</td>
+      <td>{{i[8]}}&nbsp;</td>
+    </tr>
+    {%endfor%}
+  </table>
+  <p align="right">total:{{tot}}</p>
+</form>
+
+
+<table id="customers">
+
+
+    <tr>
+      <th width="68" scope="col">DATE</th>
+      <th width="105" scope="col">TROUP NAME </th>
+            <th width="105" scope="col">CONTACT DETAILS </th>
+
+      <th width="61" scope="col">NO OF DAYS</th>
+      <th width="127" scope="col">TOTAL</th>
+    </tr>
+    <tr>
+      {% for i in val1%}
+      <td>{{i[14]}}</td>
+      <td>{{i[1]}}</td>
+      <td>&nbsp;{{i[3]}}
+      {{i[4]}}
+      {{i[10]}}</td>
+      <td>&nbsp;{{i[16]}}</td>
+      <td>&nbsp;{{i[17]}}</td>
+
+    </tr>
+    {%endfor%}
+  </table>
+<br><br><br><br><br><br><br><br>
+</body>
+{% endblock %}

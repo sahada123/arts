@@ -1,0 +1,126 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #D7BDE2;
+  color: white;
+}
+</style>
+</head>
+{% extends 'collegeindex.html'%}
+{% block body%}
+<center> <h1>
+     View Assigned candidate
+</h1></center>
+  <br><br>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<form action="/srch" method="post">
+<table width="327" height="31" border="0" cellspacing="0" align="center">
+  <tr>
+    <th width="83" scope="col">Category:</th>
+    <th width="91" scope="col"><select name="select" id="select">
+      {% for i in val %}
+      <option value="{{i[0]}}">{{i[1]}}</option>
+      {% endfor %}
+    </select></th>
+
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="327" height="31" border="0" cellspacing="0" align="center">
+  <tr>
+    <th width="83" scope="col">Choreographer:</th>
+    <th width="91" scope="col"><select name="select2" id="select2">
+
+    </select></th>
+    <th width="139" scope="col"><input type="submit" name="button" id="button" value="Search" /></th>
+  </tr>
+</table>
+  <p>&nbsp;</p>
+  <table width="313" height="69" id="customers" align="center">
+    <tr>
+      <th width="33" scope="col">S.No</th>
+      <th width="77" scope="col">Candidate name</th>
+      <th width="34" scope="col">Phone</th>
+      <th width="58" scope="col">Email</th>
+
+    </tr>
+    <tr>
+      {% for i in range(0,val1|length)%}
+      <td>{{i+1}}</td>
+      <td>{{val1[i][3]}}  {{val1[i][4]}}</td>
+      <td>{{val1[i][8]}}</td>
+      <td>{{val1[i][9]}}</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+</html>
+
+
+<script>
+
+$(document).ready(function(){
+
+    $("select#select").change(function() {
+
+        if ($(this).val() != 'default') {
+
+            var br = $('#select option:selected').val();
+
+
+
+
+            $.ajax({
+                type: 'POST',
+                url: "/choreo12",
+                data: { cid: br },
+
+                success: function(response) {
+                var opt = '';
+    for (var i=0, l=response.length; i<l; i=i+2)
+    {
+        opt+='<option value="'+response[i]+'">'+response[i+1]+'</option>';
+
+}
+
+ $('select#select2').html('').prop('disabled',false)
+    $('select#select2').append(opt);
+                }
+            });
+        }
+        else {
+            $('select#select2').html('').prop('disabled',true);
+        }
+    });
+});
+</script>
+
+{% endblock %}

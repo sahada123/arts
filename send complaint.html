@@ -1,7 +1,7 @@
-{% extends 'choreoindex.html'%}
+{% extends 'collegeindex.html'%}
 {% block body%}
 <body>
-<form id="form1" name="form1" method="post" action="">
+<form id="form1" name="form1" method="post" action="cmp1">
    <center> <h4>
     Send Complaint
     </h4></center>
@@ -12,21 +12,25 @@
       <th scope="row">Choreographer</th>
       <td><label>
         <select name="select">
+            {%for i in val%}
+            <option value="{{i[2]}}">{{i[3]}} {{i[4]}}</option>
+{%endfor%}
+
         </select>
       </label></td>
     </tr>
     <tr>
       <th scope="row">Complaint</th>
       <td><label>
-      <textarea name="textarea"></textarea>
+      <textarea name="textarea" required></textarea>
       </label></td>
     </tr>
-    <tr>
-      <th colspan="2" scope="row"><label>
-        <input type="submit" name="Submit" value="Send" />
-      </label></th>
-    </tr>
-  </table>
+    <!--<tr>-->
+      <!--<th colspan="2" scope="row"><label>-->
+        <!---->
+      <!--</label></th>-->
+    <!--</tr>-->
+  </table><center><input type="submit" name="Submit" value="Send" /></center>
 </form>
 </body>
 <!--</html>html-->
